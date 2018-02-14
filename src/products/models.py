@@ -3,6 +3,7 @@ import random
 import os
 from django.db import models
 from django.db.models.signals import pre_save
+from django.urls import reverse
 from django.utils.text import slugify
 
 def get_filename_ext(filepath):
@@ -52,7 +53,8 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
 
     def get_absolute_url(self):
-        return "/products/{slug}/".format(slug=self.slug)
+        #return "/products/{slug}/".format(slug=self.slug)
+        return reverse("products:detail", kwargs={"slug": self.slug})
 
 
     def __str__(self):

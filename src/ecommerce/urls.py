@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^contact/$', contact_page),
     url(r'^login/$', login_page),
     url(r'^register/$', register_page),
-    url(r'^products/', include("products.urls")),
+    url(r'^products/', include("products.urls", namespace='products')),
     # url(r'^products/(?P<pk>\d+)/$', ProductDetailView.as_view()),
     # url(r'^products/(?P<slug>[\w-]+)/$', ProductDetailSlugView.as_view()),
     # url(r'^featured/$', ProductFeaturedListView.as_view()),
