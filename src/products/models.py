@@ -51,6 +51,7 @@ class Product(models.Model):
     objects = ProductManager()
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         #return "/products/{slug}/".format(slug=self.slug)
